@@ -29,4 +29,33 @@
 			return $n;}
 		}
 
+	class Animale {
+		const NZAMPE=0;
+		public $nome;
+
+		public function verso() {
+			return "boh!";}
+	}
+
+	class Cane extends Animale {
+		const NZAMPE=4;		
+		public function verso(){
+			return "BAU!";}
+	}
+
+	class Papero extends Animale {
+		const NZAMPE=2;		
+		public function verso(){
+			return "QUACK!";}
+	}
+
+	class Pesce extends Animale {
+		const NZAMPE=0;		
+		public function verso(){
+			return "*O*!";}
+	}
+
+
+
+
 ?>
