@@ -32,7 +32,6 @@
 	class Animale {
 		const NZAMPE=0;
 		public $nome;
-
 		public function verso() {
 			return "boh!";}
 	}
@@ -54,6 +53,19 @@
 		public function verso(){
 			return "*O*!";}
 	}
+
+	
+	class Ruota{
+		public $pressione;
+	}
+
+
+	class Automobile {
+		function __construct() {
+			$this->ruotaAD=new Ruota();
+		}	
+	}
+	
 
 
 
