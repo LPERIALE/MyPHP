@@ -70,4 +70,57 @@ Class Calcoli {
 				return $nome;
 				}
 		}
+		
+class MyString {
+	private $testo;
+	public $r;
+	private $i;
+	public $div;
+	public $prima;
+	public $dopo;
+		
+	public function __construct($testo) {
+		$this->testo=$testo;
+		}
+	
+	public function ribalta() {
+		$r="";
+		for ($i=strlen($this->testo)-1; $i>=0; $i--) {
+			$r=$r . $this->testo[$i];
+			}	
+		return $r;
+		}
+		
+	 //dividi stringa in due parti in base a quanto prendi da video
+	public function dividi($div) {
+		$inizio=strpos($this->testo,$div);
+		if ($inizio > -1) {
+			//$fine=strpos($this->testo,$div[strlen($div)-1]);
+			$primaparte=substr($this->testo, 0,$inizio);
+			//$terzaparte=substr($this->testo, $fine+1,strlen($this->testo)-1);
+			$terzaparte=substr($this->testo, $inizio + strlen($div));
+			$risultato = array();
+			$risultato[0]=$primaparte;
+			$risultato[1]=$div;
+			$risultato[2]=$terzaparte;
+			return $risultato;
+		} else {
+			$risultato = array();
+			$risultato[0]=$this->testo;
+			$risultato[1]="";
+			$risultato[2]="";
+			return $risultato;
+			}
+		}
+	
+	//evidenzia parte usata per dividere
+	public function evidenzia($div)	{
+		$risultato=$this->dividi($div);
+		$centro="<b>".$risultato[1]."</b>";
+		$risultato[1]=$centro;
+		return $risultato;}
+
+	}
+
+
 ?>
